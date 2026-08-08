@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Medical Electronic Library</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+header {
+    background: #17365d;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: white;
+    padding: 25px 15px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #17365d;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.icon {
+    font-size: 35px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    color: #777;
+    padding: 30px;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Medical Electronic Library</h1>
+    <p>Clinical Guidelines • Protocols • Research • Education</p>
+</header>
+
+<div class="container">
+
+    <div class="grid">
+
+        <a class="card"
+           href="https://github.com/KFCH-Stroke/Stroke-Library/tree/main/Stroke">
+            <span class="icon">🧠</span>
+            Stroke
+        </a>
+
+        <a class="card"
+           href="https://github.com/KFCH-Stroke/Stroke-Library/tree/main/Neurology">
+            <span class="icon">🧠</span>
+            Neurology
+        </a>
+
+        <a class="card"
+           href="https://github.com/KFCH-Stroke/Stroke-Library/tree/main/Neurocritical-Care">
+            <span class="icon">🚑</span>
+            Neurocritical Care
+        </a>
+
+        <a class="card"
+           href="https://github.com/KFCH-Stroke/Stroke-Library/tree/main/Radiology">
+            <span class="icon">🩻</span>
+            Radiology
+        </a>
+
+        <a class="card"
+           href="https://github.com/KFCH-Stroke/Stroke-Library/tree/main/Guidelines">
+            <span class="icon">📋</span>
+            Guidelines
+        </a>
+
+        <a class="card"
+           href="https://github.com/KFCH-Stroke/Stroke-Library/tree/main/Protocols">
+            <span class="icon">📑</span>
+            Protocols
+        </a>
+
+        <a class="card"
+           href="https://github.com/KFCH-Stroke/Stroke-Library/tree/main/Research">
+            <span class="icon">🔬</span>
+            Research
+        </a>
+
+        <a class="card"
+           href="https://github.com/KFCH-Stroke/Stroke-Library/tree/main/Education">
+            <span class="icon">🎓</span>
+            Education
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+    Medical Electronic Library
+</footer>
+
+</body>
+</html>
