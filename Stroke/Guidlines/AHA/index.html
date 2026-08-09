@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AHA/ASA Stroke Guidelines</title>
 
 <style>
@@ -20,6 +21,16 @@ body {
     text-align: center;
 }
 
+.header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.header p {
+    margin: 8px 0 0;
+    font-size: 16px;
+}
+
 .container {
     max-width: 1000px;
     margin: 30px auto;
@@ -28,23 +39,40 @@ body {
 
 .card {
     background: white;
-    padding: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+    padding: 22px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-a {
+.card h2 {
+    margin-top: 0;
+    color: #123b5d;
+}
+
+.card p {
+    color: #555;
+}
+
+.button {
     display: inline-block;
     background: #123b5d;
     color: white;
-    padding: 10px 18px;
+    padding: 12px 18px;
     text-decoration: none;
     border-radius: 6px;
+    font-weight: bold;
 }
 
-a:hover {
-    opacity: 0.85;
+.button:hover {
+    background: #0d2d46;
+}
+
+.footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    font-size: 13px;
 }
 </style>
 </head>
@@ -53,43 +81,55 @@ a:hover {
 
 <div class="header">
     <h1>AHA/ASA Stroke Guidelines</h1>
-    <p>American Heart Association / American Stroke Association</p>
+    <p>Stroke Guidelines Library</p>
 </div>
 
 <div class="container">
 
-<div class="card">
-    <h2>2026 – Acute Ischemic Stroke</h2>
-    <p>Guideline for the Early Management of Patients With Acute Ischemic Stroke</p>
-    <a href="AHA 2026-acute ischemic stroke.pdf" target="_blank">
-        📄 Open PDF
-    </a>
+    <div class="card">
+        <h2>Acute Ischemic Stroke</h2>
+        <p>AHA/ASA guideline for the management of acute ischemic stroke.</p>
+        <a class="button"
+           href="./AHA%202026-acute%20ischemic%20stroke.pdf"
+           target="_blank">
+           📄 Open Guideline
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>Secondary Prevention of Stroke</h2>
+        <p>AHA guideline for prevention of recurrent stroke.</p>
+        <a class="button"
+           href="./AHA%202021-secondary%20prevention.pdf"
+           target="_blank">
+           📄 Open Guideline
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>Intracerebral Hemorrhage</h2>
+        <p>AHA/ASA guideline for spontaneous intracerebral hemorrhage.</p>
+        <a class="button"
+           href="./AHA%202022-intracerebral%20hemorrhage.pdf"
+           target="_blank">
+           📄 Open Guideline
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>Subarachnoid Hemorrhage</h2>
+        <p>AHA/ASA guideline for aneurysmal subarachnoid hemorrhage.</p>
+        <a class="button"
+           href="./AHA%202023-subarachnoid%20hemorrhage.pdf"
+           target="_blank">
+           📄 Open Guideline
+        </a>
+    </div>
+
 </div>
 
-<div class="card">
-    <h2>2023 – Aneurysmal Subarachnoid Hemorrhage</h2>
-    <p>Guideline for the Management of Patients With Aneurysmal Subarachnoid Hemorrhage</p>
-    <a href="AHA 2023-subarachnoid hemorrhage.pdf" target="_blank">
-        📄 Open PDF
-    </a>
-</div>
-
-<div class="card">
-    <h2>2022 – Intracerebral Hemorrhage</h2>
-    <p>Guideline for the Management of Patients With Spontaneous Intracerebral Hemorrhage</p>
-    <a href="AHA 2022-intracerebral hemorrhage.pdf" target="_blank">
-        📄 Open PDF
-    </a>
-</div>
-
-<div class="card">
-    <h2>2021 – Secondary Stroke Prevention</h2>
-    <p>Guideline for the Prevention of Stroke in Patients With Stroke and Transient Ischemic Attack</p>
-    <a href="AHA 2021-secondary prevention.pdf" target="_blank">
-        📄 Open PDF
-    </a>
-</div>
-
+<div class="footer">
+    KFCH Stroke Library
 </div>
 
 </body>
