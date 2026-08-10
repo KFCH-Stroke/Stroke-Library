@@ -1,0 +1,42 @@
+name: Publish Stroke Protocol PDFs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Stroke/Protocols/.upload/**'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Rebuild PDFs from upload parts
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd Stroke/Protocols
+          shopt -s nullglob
+          mapfile -t first_parts < <(find .upload -maxdepth 1 -type f -name '*.part000' | sort)
+          for first in "${first_parts[@]}"; do
+            base="${first%.part000}"
+            name="$(basename "$base")"
+            cat "${base}".part* | base64 -d | gzip -d > "$name"
+            test -s "$name"
+            head -c 5 "$name" | grep -q '%PDF-'
+          done
+          rm -rf .upload
+      - name: Commit published PDFs
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add Stroke/Protocols
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Publish Stroke Protocol PDFs'
+          git push
