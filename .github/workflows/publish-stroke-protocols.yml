@@ -16,19 +16,16 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Rebuild PDFs from upload parts
+      - name: Rebuild Stroke Protocol PDF bundle
         shell: bash
         run: |
           set -euo pipefail
           cd Stroke/Protocols
-          shopt -s nullglob
-          mapfile -t first_parts < <(find .upload -maxdepth 1 -type f -name '*.part000' | sort)
-          for first in "${first_parts[@]}"; do
-            base="${first%.part000}"
-            name="$(basename "$base")"
-            cat "${base}".part* | base64 -d | gzip -d > "$name"
-            test -s "$name"
-            head -c 5 "$name" | grep -q '%PDF-'
+          cat .upload/bundle.part* | base64 -d > /tmp/stroke_protocols_bundle.tar.gz
+          tar -xzf /tmp/stroke_protocols_bundle.tar.gz -C .
+          for f in *.pdf; do
+            test -s "$f"
+            head -c 5 "$f" | grep -q '%PDF-'
           done
           rm -rf .upload
       - name: Commit published PDFs
