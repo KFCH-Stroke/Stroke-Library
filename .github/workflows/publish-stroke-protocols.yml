@@ -21,7 +21,7 @@ jobs:
         run: |
           set -euo pipefail
           cd Stroke/Protocols
-          cat .upload/bundle.part* | base64 -d > /tmp/stroke_protocols_bundle.tar.gz
+          cat .upload/bundle2.part* | base64 -d > /tmp/stroke_protocols_bundle.tar.gz
           tar -xzf /tmp/stroke_protocols_bundle.tar.gz -C .
           for f in *.pdf; do
             test -s "$f"
