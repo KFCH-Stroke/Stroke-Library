@@ -21,12 +21,13 @@ jobs:
         run: |
           set -euo pipefail
           cd Stroke/Protocols
-          cat .upload/bundle2.part* | base64 -d > /tmp/stroke_protocols_bundle.tar.gz
+          cat .upload/bundle3.part* | base64 -d > /tmp/stroke_protocols_bundle.tar.gz
           tar -xzf /tmp/stroke_protocols_bundle.tar.gz -C .
           for f in *.pdf; do
             test -s "$f"
             head -c 5 "$f" | grep -q '%PDF-'
           done
+          test "$(find . -maxdepth 1 -type f -name '*.pdf' | wc -l)" -ge 12
           rm -rf .upload
       - name: Commit published PDFs
         shell: bash
